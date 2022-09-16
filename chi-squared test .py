@@ -20,6 +20,5 @@ fatal = fatal['mean_driver_age'].count()
 min_age=20 
 max_age=65
 #check for ages between 20 and 65
-print(chi2_contingency([slight[min_age:max_age],
-                  serious[min_age:max_age],
-                  fatal[min_age:max_age]]))
+list_of_proportions = list(zip(slight[min_age:max_age], serious[min_age:max_age], fatal[min_age:max_age]))
+chi2_contingency(list_of_proportions)
